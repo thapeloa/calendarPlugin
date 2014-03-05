@@ -1,0 +1,19 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="com.example.myplugin" version="0.1.0">
+        <name>CalendarPlugin</name>
+        <description>Cordova Java Thread</description>
+        <license>Apache 2.0</license>
+        <keywords>cordova,CalendarPlugin</keywords>
+        <js-module src="www/calendar.js" name="calendarPlugin">
+            <clobbers target="calendarPlugin" />
+        </js-module>
+        <platform name="android">
+            <config-file target="res/xml/config.xml" parent="/*">
+                <feature name="CalendarPlugin">
+                    <param name="android-package" value="com.example.myplugin.CalendarPlugin"/>
+                </feature>
+            </config-file>            
+            <source-file src="src/android/CalendarPlugin.java" target-dir="src/com/example/myplugin/CalendarPlugin"/>
+        </platform>
+    </plugin>
